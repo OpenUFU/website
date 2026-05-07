@@ -1,0 +1,14 @@
+# Arquivos de documentos e referências temporárias
+*.docx
+*.pptx
+extracted_doc.md
+extract.py
+
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+
+# Caches e arquivos temporários
+__pycache__/
+*.pyc
+*.pyo

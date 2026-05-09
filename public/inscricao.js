@@ -6,28 +6,31 @@ document.addEventListener('DOMContentLoaded', () => {
         form.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            // Extract form data
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').content;
             const formData = new FormData(form);
             const payload = {
-                nomeCompleto: formData.get('nomeCompleto'),
-                cpf: formData.get('cpf'),
-                curso: formData.get('curso'),
-                matricula: formData.get('matricula'),
-                periodo: formData.get('periodo')
+                registration: {
+                    nome_completo: formData.get('nomeCompleto'),
+                    cpf: formData.get('cpf'),
+                    curso: formData.get('curso'),
+                    matricula: formData.get('matricula'),
+                    periodo: formData.get('periodo')
+                }
             };
 
-            // Log the JSON payload (acting as the frontend delivery)
             const response = await fetch('/registration', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    'X-CSRF-Token': csrfToken,
                 },
                 body: JSON.stringify(payload),
             });
 
-            // Hide form and show success message
-            form.style.display = 'none';
-            feedback.classList.remove('hidden');
+            if (response.ok) {
+                form.style.display = 'none';
+                feedback.classList.remove('hidden');
+            }
         });
     }
 });

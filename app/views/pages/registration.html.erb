@@ -48,6 +48,13 @@
                     <input type="number" id="periodo" name="registration[periodo]" required placeholder="Ex: 5" min="1" max="14">
                 </div>
 
+                <div class="form-group">
+                    <label for="contribuicao">Como você acredita poder contribuir para o projeto?</label>
+                    <textarea id="contribuicao" name="registration[contribuicao]" required
+                        placeholder="Descreva suas habilidades, experiências ou áreas em que gostaria de atuar no projeto."
+                        rows="5"></textarea>
+                </div>
+
                 <button type="submit" class="btn-submit">Confirmar Inscrição</button>
             <% end %>
             <div id="formFeedback" class="form-feedback hidden">

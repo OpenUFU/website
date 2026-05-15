@@ -20,6 +20,6 @@ class RegistrationController < ApplicationController
   private
 
   def registration_params
-    params.require(:registration).permit(:nome_completo, :cpf, :curso, :matricula, :periodo, :email)
+    params.require(:registration).permit(:nome_completo, :cpf, :curso, :matricula, :periodo, :email, :contribuicao)
   end
 end

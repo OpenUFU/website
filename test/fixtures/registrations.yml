@@ -1,15 +1,17 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  nome_completo: MyString
-  cpf: MyString
-  curso: MyString
-  matricula: MyString
-  periodo: MyString
+valid_one:
+  nome_completo: João da Silva
+  cpf: "123.456.789-00"
+  curso: Sistemas de Informação
+  matricula: "11911SI001"
+  periodo: "5"
+  email: joao@ufu.br
 
-two:
-  nome_completo: MyString
-  cpf: MyString
-  curso: MyString
-  matricula: MyString
-  periodo: MyString
+valid_two:
+  nome_completo: Maria Souza
+  cpf: "987.654.321-00"
+  curso: Ciência da Computação
+  matricula: "11911CC002"
+  periodo: "3"
+  email: maria@ufu.br
